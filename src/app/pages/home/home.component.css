@@ -1,0 +1,21 @@
+.nav-tabs .nav-link {
+  color: #6c757d;
+  font-weight: 500;
+  border-top: none!important;
+  border-left: none!important;
+  border-right: none!important;
+}
+
+.nav-tabs .nav-link.active {
+  color: #000;
+  background-color: transparent!important;
+  font-weight: 600;
+  border-top: none!important;
+  border-left: none!important;
+  border-right: none!important;
+  border-bottom: 3px solid black;
+}
+
+.m-t-100 {
+  margin-top: 80px!important;
+}

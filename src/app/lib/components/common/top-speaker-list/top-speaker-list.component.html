@@ -1,0 +1,41 @@
+<div class="d-flex align-items-center justify-content-between m-l-10 mb-2 px-3">
+  <div class="text-container">
+    <span class="webinar-text">Top Speakers</span>
+  </div>
+  <div class="btn-container">
+    <button class="btn btn-outline-dark btn-border-color">View All</button>
+  </div>
+</div>
+
+  <div class="container px-0 my-4">
+  <!-- Horizontal Scrollable List -->
+  <div class="d-flex overflow-auto gap-3 pb-2">
+
+    <!-- Doctor Cards -->
+    <div *ngFor="let doctor of doctors" 
+         class="card bg-linear-gradient text-center shadow-sm border-0" 
+         style="min-width: 180px;">
+
+      <div class="position-relative">
+        <!-- Doctor Image -->
+        <img [src]="doctor.image" 
+             [alt]="doctor.name" 
+             class="rounded-circle mx-auto mt-3" 
+             [ngClass]="{'circle-image' : doctor.isLive}"
+             width="100" height="100">
+
+        <!-- Live Badge -->
+        <span *ngIf="doctor.isLive" 
+              class="position-absolute bottom-0 start-50 translate-middle badge bg-danger">
+          Live
+        </span>
+      </div>
+
+      <!-- Doctor Info -->
+      <div class="card-body p-2">
+        <h6 class="mb-1 fw-semibold">{{ doctor.name }}</h6>
+        <p class="mb-0 text-muted small">{{ doctor.specialty }}</p>
+      </div>
+    </div>
+  </div>
+</div>

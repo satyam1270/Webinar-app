@@ -1,0 +1,52 @@
+<!-- Header visible only on mobile/tablet -->
+<div class="d-md-none d-sm-block d-flex justify-content-between align-items-center py-2 border-bottom">
+  <!-- Left: Back + Title -->
+  <div class="d-flex align-items-center gap-2">
+    <i class="bi bi-arrow-left fs-5"></i>
+    <strong class="fs-6 mb-0">Webinar</strong>
+  </div>
+
+  <!-- Right: Search + Filter -->
+  <div class="d-flex align-items-center gap-3">
+    <i class="bi bi-search fs-5"></i>
+    <i class="bi bi-sliders fs-5"></i>
+  </div>
+</div>
+
+<div class="m-t-100 d-none d-sm-block">
+</div>
+<div class="mt-2">
+  <ul class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let tab of tabs; let i = index">
+      <a class="nav-link" [ngClass]="{ active: selectedTab === i }" (click)="selectTab(i)" href="javascript:void(0)">
+        {{ tab.label }}
+      </a>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-2 mx-2">
+    <div class="tab-pane fade show active">
+      <ng-container *ngIf="tabs[selectedTab]">
+        <!-- Load Live Webinar List only if the label is 'For you' -->
+        <div *ngIf="tabs[selectedTab].label === 'For you'">
+          <app-live-webinar-list></app-live-webinar-list>
+          <app-upcoming-webinar-list></app-upcoming-webinar-list>
+          <app-webinar-cardialogy></app-webinar-cardialogy>
+          <app-top-speaker-list></app-top-speaker-list>
+          <app-browse-topic-list></app-browse-topic-list>
+          <app-webinar-you-may-like></app-webinar-you-may-like>
+        </div>
+
+        <!-- Example for other tabs -->
+        <div *ngIf="tabs[selectedTab].label === 'Live'">
+          <app-live-webinar-list></app-live-webinar-list>
+        </div>
+
+        <div *ngIf="tabs[selectedTab].label === 'Upcoming'">
+          <app-upcoming-webinar-list></app-upcoming-webinar-list>
+        </div>
+        <!-- Replace above line with your tab-specific component or template -->
+      </ng-container>
+    </div>
+  </div>
+</div>

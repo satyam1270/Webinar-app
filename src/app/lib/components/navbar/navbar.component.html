@@ -1,0 +1,111 @@
+<nav class="navbar navbar-expand-lg bg-white px-3 py-lg-0 py-sm-2 d-none d-sm-flex fixed-top shadow-sm">
+  <div class="container-fluid">
+
+    <!-- Left: Logo + Search -->
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" href="#">
+        <img src="src/assets/Logo.png" alt="Logo" class="img-fluid d-none d-md-block">
+        <!-- Hamburger -->
+        <button class="navbar-brand d-md-none d-sm-block">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </a>
+
+      <form class="ms-2 d-none d-sm-block position-relative">
+        <input type="search" class="form-control pe-5 rounded-12" placeholder="Search in docquity">
+        <i class="fa-solid fa-magnifying-glass position-absolute top-50 end-0 translate-middle-y me-3 text-muted"
+          style="pointer-events: none;"></i>
+      </form>
+    </div>
+
+    <!-- Tablet Layout -->
+    <div class="d-flex d-lg-none align-items-center ms-auto">
+      <!-- Bell Icon -->
+      <i class="fa-solid fa-bell me-3"></i>
+      <!-- Post Button -->
+      <button class="btn btn-dark w-40 me-2 rounded-circle d-md-none d-sm-block"><i
+          class="fa-solid fa-plus"></i></button>
+      <button class="d-md-block d-sm-none btn btn-dark rounded-pill px-3 me-2"><i class="fa-solid fa-plus pe-2"></i>
+        Post</button>
+      <!-- Profile -->
+      <a class="d-flex align-items-center text-decoration-none">
+        <div class="position-relative">
+          <img src="src/assets/user.png" alt="Profile" class="rounded-circle" width="35" height="35">
+          <!-- Verified badge -->
+          <img src="src/assets/verify.png" alt="Verified" class="rounded-circle position-absolute bottom-0 end-0"
+            style="width: 15px; height: 15px;">
+        </div>
+        <span class="ms-2 d-md-block d-sm-none">Aaron</span>
+        <i class="fa fa-angle-down ps-1"></i>
+      </a>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="navbar-collapse d-none d-lg-flex" id="navbarNav">
+      <!-- Center Menu -->
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item nav-custom text-center">
+          <a class="nav-link d-flex flex-column align-items-center"
+            [ngClass]="{'active text-primary border-bottom border-3 border-primary border-custom': activeMenu === 'home'}"
+            (click)="setActive('home')" href="#">
+            <i class="fa-solid fa-house fs-5 mb-1"></i>
+            <span class="fs-14">Home</span>
+          </a>
+        </li>
+
+        <li class="nav-item nav-custom text-center">
+          <a class="nav-link d-flex flex-column align-items-center"
+            [ngClass]="{'active text-primary border-bottom border-3 border-primary border-custom': activeMenu === 'webinar'}"
+            (click)="setActive('webinar')" href="#">
+            <i class="fa-solid fa-video fs-5 mb-1"></i>
+            <span class="fs-14">Webinar</span>
+          </a>
+        </li>
+
+        <li class="nav-item nav-custom text-center">
+          <a class="nav-link d-flex flex-column align-items-center"
+            [ngClass]="{'active text-primary border-bottom border-3 border-primary border-custom': activeMenu === 'skp'}"
+            (click)="setActive('skp')" href="#">
+            <i class="fa-solid fa-book fs-5 mb-1"></i>
+            <span class="fs-14">SKP</span>
+          </a>
+        </li>
+
+        <li class="nav-item nav-custom text-center">
+          <a class="nav-link d-flex flex-column align-items-center"
+            [ngClass]="{'active text-primary border-bottom border-3 border-primary border-custom': activeMenu === 'calendar'}"
+            (click)="setActive('calendar')" href="#">
+            <i class="fa-solid fa-calendar-days fs-5 mb-1"></i>
+            <span class="fs-14">Calendar</span>
+          </a>
+        </li>
+
+        <li class="nav-item nav-custom text-center">
+          <a class="nav-link d-flex flex-column align-items-center"
+            [ngClass]="{'active text-primary border-bottom border-3 border-primary border-custom': activeMenu === 'notifications'}"
+            (click)="setActive('notifications')" href="#">
+            <i class="fa-solid fa-bell fs-5 mb-1"></i>
+            <span class="fs-14">Notifications</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right: Post + Profile -->
+      <div class="d-flex align-items-center">
+        <button class="btn btn-dark rounded-pill px-3 me-2"><i class="fa-solid fa-plus pe-2"></i> Post</button>
+        <a class="d-flex align-items-center text-decoration-none">
+          <!-- Parent profile image -->
+          <div class="position-relative">
+            <img src="src/assets/user.png" alt="Profile" class="rounded-circle" width="35" height="35">
+
+            <!-- Verified badge -->
+            <img src="src/assets/verify.png" alt="Verified" class="rounded-circle position-absolute bottom-0 end-0"
+              style="width: 15px; height: 15px;">
+          </div>
+          <span class="ms-2">Aaron</span>
+          <i class="fa fa-angle-down ps-1"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,66 @@
+/* base */
+@import './tailwindcss/base.css';
+@import './01-base/variables.css';
+@import './01-base/document.css';
+@import './01-base/font.css';
+@import './01-base/heading.css';
+
+/* components */
+@import './tailwindcss/components.css';
+@import './02-components/link.css';
+@import './02-components/button.css';
+
+/* utilities */
+@import './tailwindcss/utilities.css';
+@import './03-utilities/border.css';
+
+
+body {
+  font-family: 'Manrope';
+  background-color: #fff!important;
+}
+
+.rounded-12 {
+  border-radius: 12px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.border-custom {
+  border-color: #1D1919 !important;
+}
+
+.nav-link {
+  color: #737171 !important;
+}
+
+.active {
+  color: #1D1919 !important;
+}
+
+.nav-link span {
+  transition: color 0.2s;
+}
+
+.nav-custom {
+  padding: 10px 10px 0px 10px!important;
+}
+
+.navbar-nav {
+  border-bottom-color: #1D1919!important;
+}
+
+.w-40 {
+  min-width: 40px !important;
+  width:40px;
+}
+
+.nav-link:focus {
+  border-color: #1D1919!important;
+}
+
+.nav-link:hover {
+  border:none
+}

@@ -1,0 +1,23 @@
+<div class="d-flex align-items-center justify-content-between m-l-10 mb-2 px-3">
+  <div class="text-container">
+    <span class="webinar-text">Browse by topic</span>
+  </div>
+  <div class="btn-container">
+    <button class="btn btn-outline-dark btn-border-color">View All</button>
+  </div>
+</div>
+
+<div class="container px-0 mt-4">
+  <div class="scroll-container bg-blue p-3 rounded">
+    <div class="chip-grid">
+      <span
+        *ngFor="let category of categories"
+        class="badge bg-white border text-dark px-3 py-2 rounded-pill"
+      >
+        {{ category.name }} ({{ category.count }})
+      </span>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,130 @@
+<div *ngIf="webinarData?.pageTitle" class="d-flex align-items-center justify-content-between m-l-10 mb-2"
+  [ngClass]="{'px-3': !webinarData?.linearGradient}">
+  <div class="text-container">
+    <span class="webinar-text">{{webinarData?.pageTitle}}</span>
+  </div>
+  <div class="btn-container">
+    <button class="btn btn-outline-dark btn-border-color">{{webinarData?.viewBtnText}}</button>
+  </div>
+</div>
+<div class="container px-0" [ngClass]="{'py-4': webinarData?.pageTitle}">
+  <div class="row gx-3 gy-4 pb-4"
+    [ngClass]="{'bg-linear-gradient': webinarData?.linearGradient ,'px-3': webinarData?.linearGradient}">
+    <div *ngFor="let webinar of webinarData?.data" class="col-10 col-sm-6 col-md-6 col-lg-6"
+      [ngClass]="{'col-xl-4': webinarData?.pageTitle}">
+      <div class="card h-100 shadow-sm">
+        <div class="position-relative">
+          <div *ngIf="webinar?.socialBtn" class="d-flex justify-content-between align-items-start px-2 py-2">
+  <!-- Left Info -->
+  <div class="d-flex align-items-start">
+    <img [src]="webinar?.webinarCompanyLogo" alt="Logo" class="rounded-circle me-2" width="40" height="40"/>
+    <div>
+      <div class="fw-semibold">PDGI Indonesia</div>
+      <div class="text-muted small">Sponsored by Roche</div>
+      <div class="text-muted small">2845 followers • 30 min ago</div>
+    </div>
+  </div>
+
+  <!-- Right Actions -->
+  <div class="d-flex align-items-center gap-2">
+    <a href="#" class="text-primary fw-semibold text-decoration-none">
+      <i class="bi bi-plus"></i> Follow
+    </a>
+    <i class="bi bi-three-dots-vertical fs-5 text-muted"></i>
+  </div>
+</div>
+          <img [src]="webinar.image" class="card-img-top" alt="Webinar image" />
+          <div *ngIf="webinar.isLive" class="position-absolute top-0 start-0 m-2 badge bg-red">
+            <div class="d-flex align-items-center">
+              <img [src]="webinar.liveImage" class="card-img-top" alt="Webinar image" />
+              <div class="ms-1 fw-normal fs-14">Live</div>
+            </div>
+          </div>
+          <div *ngIf="webinar.viewers" class="position-absolute top-0 left-80 m-2 badge bg-black text-white">
+            <div class="d-flex align-items-center">
+              <img [src]="webinar.peopleImage" class="card-img-top image-w-h" alt="Webinar image" />
+              <div class="ms-1 fw-normal fs-14"> {{ webinar.viewers }}</div>
+            </div>
+          </div>
+          <div *ngIf="webinar.isMedia"
+            class="position-absolute top-0 end-0 right-43 m-2 badge bg-light text-dark badge-circle">
+            <img [src]="webinar.mediaIcons.iconCC" class="card-img-top" alt="Webinar image" />
+          </div>
+          <div *ngIf="webinar.isMedia" class="position-absolute top-0 end-0 m-2 badge bg-light text-dark badge-circle">
+            <img [src]="webinar.mediaIcons.iconSpeaker" class="card-img-top" alt="Webinar image" />
+          </div>
+          <div *ngIf="webinar.duration"
+            class="position-absolute bottom-0 end-0 m-2 badge bg-light text-dark duration-box">
+            <span class="duration-text-color">{{ webinar.duration }}</span>
+          </div>
+        </div>
+        <div class="border-top-color card-body">
+          <div *ngIf="webinar.credits" class="badge bg-credits w-fit text-dark mb-2 d-flex align-items-center">
+            <img [src]="webinar.creditImage" class="card-img-top credit-image" alt="Webinar image" />
+            <div class="ms-1 fw-normal fs-14"> {{ webinar.credits }} Credits <span class="fc-red"
+                *ngIf="webinar.isCreditExpiry">{{ webinar.creditExpiryContent }}</span> </div>
+          </div>
+          <h6 class="card-title">
+            {{ webinar.title }}
+          </h6>
+          <div *ngIf="webinar.webinarCompanyLogo && webinar.by"
+            class="text-muted d-flex align-items-center small mb-2 fs-14">
+            <div><img [src]="webinar.webinarCompanyLogo" class="card-img-top credit-image" alt="Webinar image" /></div>
+            <div class="ms-2">by {{
+              webinar.by }}</div>
+          </div>
+          <div class="p-2 rounded bg-light border box-custom mb-3">
+            <strong class="text-muted small fs-10 fc-grey">KEY HIGHLIGHTS</strong>
+            <p class="mb-0 small fs-14">{{ webinar?.highlights }}</p>
+          </div>
+          <!-- View all button -->
+          <button *ngIf="webinar?.watchNowBtn" class="btn btn-dark btn-sm w-100">Watch now</button>
+          <!-- Notify-section -->
+          <div *ngIf="webinar?.notifySection" class="container px-0">
+            <div
+              class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center bg-info bg-opacity-25 rounded-3 p-3 gap-2 shadow-sm custom-notify-section">
+              <div>
+                <p class="mb-1 text-secondary small">Goes live on</p>
+                <p class="mb-0 fw-semibold">7 Jan 2025, 12:30 PM</p>
+              </div>
+              <button class="btn btn-dark d-flex align-items-center gap-2">
+                <i class="fa-solid fa-bell"></i>
+                Notify me
+              </button>
+            </div>
+          </div>
+          <!-- social btn -->
+          <div *ngIf="webinar?.socialBtn"
+            class="d-flex justify-content-between align-items-center border-top pt-2 px-2 small text-muted">
+            <div>
+              <span>20 Likes</span>
+              <span class="mx-2">•</span>
+              <span>12 Comments</span>
+            </div>
+            <div>750 Views</div>
+          </div>
+
+          <!-- Action Buttons Row -->
+          <div *ngIf="webinar?.socialBtn" class="d-flex justify-content-around text-center py-2 px-2 border-top">
+            <div>
+              <i class="bi bi-hand-thumbs-up fs-5"></i><br />
+              <small>Like</small>
+            </div>
+            <div>
+              <i class="bi bi-chat-left fs-5"></i><br />
+              <small>Comment</small>
+            </div>
+            <div>
+              <i class="bi bi-arrow-repeat fs-5"></i><br />
+              <small>Repost</small>
+            </div>
+            <div>
+              <i class="bi bi-share fs-5"></i><br />
+              <small>Share</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
