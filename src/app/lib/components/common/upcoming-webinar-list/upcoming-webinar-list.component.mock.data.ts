@@ -12,20 +12,20 @@ export const upcomingWebinarList = {
       title: "Perspectives in The Covid19 Management of Parox Health",
       by: "PDGI Indonesia",
       highlights: "Manage chronic and complex diseases",
-      image: "src/assets/upcoming-webinar-image1.png",
-      liveImage: "src/assets/live.png",
-      creditImage: "src/assets/reward.png",
+      image: "assets/upcoming-webinar-image1.png",
+      liveImage: "assets/live.png",
+      creditImage: "assets/reward.png",
       isCreditExpiry: false,
       creditExpiryContent: "(Expiring in 23h 30m)",
-      peopleImage: "src/assets/People.png",
-      webinarCompanyLogo: "src/assets/webinar-company1.png",
+      peopleImage: "assets/People.png",
+      webinarCompanyLogo: "assets/webinar-company1.png",
       isMedia: false,
       notifySection: true,
       watchNowBtn: false,
       socialBtn:false,
       mediaIcons: {
-        iconCC: "src/assets/cc.png",
-        iconSpeaker: "src/assets/Mute.png"
+        iconCC: "assets/cc.png",
+        iconSpeaker: "assets/Mute.png"
       }
     },
     {
@@ -37,20 +37,20 @@ export const upcomingWebinarList = {
       title: "Perspectives in The Covid19 Management of Parox Health",
       by: "HealthOrg",
       highlights: "Early detection & lifestyle management",
-      image: "src/assets/upcoming-webinar-image-2.png",
-      liveImage: "src/assets/live.png",
-      creditImage: "src/assets/reward.png",
+      image: "assets/upcoming-webinar-image-2.png",
+      liveImage: "assets/live.png",
+      creditImage: "assets/reward.png",
       isCreditExpiry: true,
       creditExpiryContent: "(Expiring in 23h 30m)",
-      peopleImage: "src/assets/People.png",
-      webinarCompanyLogo: "src/assets/webinar-company2.png",
+      peopleImage: "assets/People.png",
+      webinarCompanyLogo: "assets/webinar-company2.png",
       isMedia: false,
       watchNowBtn: false,
       notifySection: true,
       socialBtn:false,
       mediaIcons: {
-        iconCC: "src/assets/cc.png",
-        iconSpeaker: "src/assets/Mute.png"
+        iconCC: "assets/cc.png",
+        iconSpeaker: "assets/Mute.png"
       }
     },
     {
@@ -62,20 +62,20 @@ export const upcomingWebinarList = {
       title: "Perspectives in The Covid19 Management of Parox Health",
       by: "CardioWorld",
       highlights: "Breakthrough treatments & AI diagnostics",
-      image: "src/assets/upcoming-webinar-image3.png",
-      liveImage: "src/assets/live.png",
-      creditImage: "src/assets/reward.png",
+      image: "assets/upcoming-webinar-image3.png",
+      liveImage: "assets/live.png",
+      creditImage: "assets/reward.png",
       isCreditExpiry: false,
       creditExpiryContent: "(Expiring in 23h 30m)",
-      peopleImage: "src/assets/People.png",
-      webinarCompanyLogo: "src/assets/webinar-company3.png",
+      peopleImage: "assets/People.png",
+      webinarCompanyLogo: "assets/webinar-company3.png",
       isMedia: false,
       watchNowBtn: false,
       notifySection: true,
       socialBtn:false,
       mediaIcons: {
-        iconCC: "src/assets/cc.png",
-        iconSpeaker: "src/assets/Mute.png"
+        iconCC: "assets/cc.png",
+        iconSpeaker: "assets/Mute.png"
       }
     }
   ]

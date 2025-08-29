@@ -6,94 +6,92 @@
 
 <div class="container-fluid mt-4">
   <div class="row">
-    <!-- LEFT FILTERS (hidden on small screens) -->
-    <div class="col-md-3 d-none d-md-block border-end pe-3">
-  <div class="accordion" id="filterAccordion">
+    <!-- LEFT FILTERS -->
+    <div class="col-md-3 col-12 border-end pe-3 mb-3">
+      <div class="accordion" id="filterAccordion">
 
-    <!-- Specialty -->
-    <div class="accordion-item border-0">
-      <h2 class="accordion-header" id="headingSpecialty">
-        <button class="accordion-button px-0 py-2 bg-white" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapseSpecialty" aria-expanded="true" aria-controls="collapseSpecialty">
-          Specialty
-        </button>
-      </h2>
-      <div id="collapseSpecialty" class="accordion-collapse collapse show" aria-labelledby="headingSpecialty"
-        data-bs-parent="#filterAccordion">
-        <div class="accordion-body px-0 py-2">
-
-          <!-- Search -->
-          <div class="mb-2">
-            <input type="text" class="form-control form-control-sm" placeholder="Search" [(ngModel)]="searchTerm" />
-          </div>
-
-          <!-- Filter List -->
-          <div *ngFor="let item of filters.specialties | filter: searchTerm" class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" [id]="item">
-            <label class="form-check-label small" [for]="item">{{ item }}</label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Topics -->
-    <div class="accordion-item border-0">
-      <h2 class="accordion-header" id="headingTopics">
-        <button class="accordion-button collapsed px-0 py-2 bg-white" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapseTopics" aria-expanded="false" aria-controls="collapseTopics">
-          Topics
-        </button>
-      </h2>
-      <div id="collapseTopics" class="accordion-collapse collapse" aria-labelledby="headingTopics"
-        data-bs-parent="#filterAccordion">
-        <div class="accordion-body px-0 py-2">
-          <div *ngFor="let topic of filters.topics" class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" [id]="topic">
-            <label class="form-check-label small" [for]="topic">{{ topic }}</label>
+        <!-- Specialty -->
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingSpecialty">
+            <button class="accordion-button px-0 py-2 bg-white" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSpecialty" aria-expanded="true" aria-controls="collapseSpecialty">
+              Specialty
+            </button>
+          </h2>
+          <div>
+            <div class="accordion-body px-0 py-2">
+              <!-- Search -->
+              <div class="mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Search" [(ngModel)]="searchTerm" />
+              </div>
+              <!-- Filter List -->
+              <div *ngFor="let item of filters.specialties | filter: searchTerm" class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" [id]="item">
+                <label class="form-check-label small" [for]="item">{{ item }}</label>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Speakers -->
-    <div class="accordion-item border-0">
-      <h2 class="accordion-header" id="headingSpeakers">
-        <button class="accordion-button collapsed px-0 py-2 bg-white" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapseSpeakers" aria-expanded="false" aria-controls="collapseSpeakers">
-          Speakers
-        </button>
-      </h2>
-      <div id="collapseSpeakers" class="accordion-collapse collapse" aria-labelledby="headingSpeakers"
-        data-bs-parent="#filterAccordion">
-        <div class="accordion-body px-0 py-2">
-          <div *ngFor="let speaker of filters.speakers" class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" [id]="speaker">
-            <label class="form-check-label small" [for]="speaker">{{ speaker }}</label>
+        <!-- Topics -->
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingTopics">
+            <button class="accordion-button collapsed px-0 py-2 bg-white" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTopics" aria-expanded="false" aria-controls="collapseTopics">
+              Topics
+            </button>
+          </h2>
+          <div id="collapseTopics" class="accordion-collapse collapse" aria-labelledby="headingTopics"
+            data-bs-parent="#filterAccordion">
+            <div class="accordion-body px-0 py-2">
+              <div *ngFor="let topic of filters.topics" class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" [id]="topic">
+                <label class="form-check-label small" [for]="topic">{{ topic }}</label>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Pharma -->
-    <div class="accordion-item border-0">
-      <h2 class="accordion-header" id="headingPharma">
-        <button class="accordion-button collapsed px-0 py-2 bg-white" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapsePharma" aria-expanded="false" aria-controls="collapsePharma">
-          Pharma & associations
-        </button>
-      </h2>
-      <div id="collapsePharma" class="accordion-collapse collapse" aria-labelledby="headingPharma"
-        data-bs-parent="#filterAccordion">
-        <div class="accordion-body px-0 py-2">
-          <div *ngFor="let pharma of filters.pharma" class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" [id]="pharma">
-            <label class="form-check-label small" [for]="pharma">{{ pharma }}</label>
+        <!-- Speakers -->
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingSpeakers">
+            <button class="accordion-button collapsed px-0 py-2 bg-white" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSpeakers" aria-expanded="false" aria-controls="collapseSpeakers">
+              Speakers
+            </button>
+          </h2>
+          <div id="collapseSpeakers" class="accordion-collapse collapse" aria-labelledby="headingSpeakers"
+            data-bs-parent="#filterAccordion">
+            <div class="accordion-body px-0 py-2">
+              <div *ngFor="let speaker of filters.speakers" class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" [id]="speaker">
+                <label class="form-check-label small" [for]="speaker">{{ speaker }}</label>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Pharma -->
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingPharma">
+            <button class="accordion-button collapsed px-0 py-2 bg-white" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapsePharma" aria-expanded="false" aria-controls="collapsePharma">
+              Pharma & associations
+            </button>
+          </h2>
+          <div id="collapsePharma" class="accordion-collapse collapse" aria-labelledby="headingPharma"
+            data-bs-parent="#filterAccordion">
+            <div class="accordion-body px-0 py-2">
+              <div *ngFor="let pharma of filters.pharma" class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" [id]="pharma">
+                <label class="form-check-label small" [for]="pharma">{{ pharma }}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-</div>
 
     <!-- RIGHT CARDS SECTION -->
     <div class="col-md-9">
