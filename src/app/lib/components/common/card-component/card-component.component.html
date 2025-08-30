@@ -7,7 +7,7 @@
     <button class="btn btn-outline-dark btn-border-color">{{webinarData?.viewBtnText}}</button>
   </div>
 </div>
-<div class="container px-0" [ngClass]="{'py-4': webinarData?.pageTitle}">
+<div class="container-full px-0" [ngClass]="{'py-4': webinarData?.pageTitle}">
   <div class="row gx-3 gy-4 pb-4"
     [ngClass]="{'bg-linear-gradient': webinarData?.linearGradient ,'px-3': webinarData?.linearGradient}">
     <div *ngFor="let webinar of webinarData?.data" class="col-10 col-sm-6 col-md-6 col-lg-6"
